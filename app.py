@@ -12,7 +12,7 @@ import requests
 import joblib
 
 
-url = "https://github.com/eldon6219/TumorSwift-oral-cancer/blob/main/Oral.pkl"
+url = "https://github.com/eldon6219/TumorSwift-oral-cancer/blob/main/Oral.pkl?raw=true"
 response = requests.get(url, stream=True)
 
 with open("Oral.pkl", "wb") as f:
