@@ -8,7 +8,18 @@ from keras.preprocessing.image import img_to_array
 # from keras.applications.vgg16 import decode_predictions
 # from keras.applications.vgg16 import VGG16
 import tensorflow as tf
-model = tf.keras.models.load_model('models/Oral.h5')
+import requests
+import joblib
+
+
+url = "https://github.com/eldon6219/TumorSwift-lung-cancer/blob/main/colon_lung.pkl?raw=true"
+response = requests.get(url, stream=True)
+
+with open("colon_lung.pkl", "wb") as f:
+    for chunk in response.iter_content(1024):
+        f.write(chunk)
+
+model = joblib.load("colon_lung.pkl")
 class_labels = ['Normal', 'Positive Oral Cancer']
 
 
