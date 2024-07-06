@@ -12,14 +12,14 @@ import requests
 import joblib
 
 
-url = "https://github.com/eldon6219/TumorSwift-lung-cancer/blob/main/colon_lung.pkl?raw=true"
+url = "https://github.com/eldon6219/TumorSwift-oral-cancer/blob/6a62203a17f66fb4044a93466174e4179d15520b/Oral.pkl"
 response = requests.get(url, stream=True)
 
-with open("colon_lung.pkl", "wb") as f:
+with open("Oral.pkl", "wb") as f:
     for chunk in response.iter_content(1024):
         f.write(chunk)
 
-model = joblib.load("colon_lung.pkl")
+model = joblib.load("Oral.pkl")
 class_labels = ['Normal', 'Positive Oral Cancer']
 
 
