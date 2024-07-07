@@ -11,7 +11,12 @@ import joblib
 
 
 
-model = tf.keras.models.load_model("models/Oral.h5")
+import os
+
+# Get absolute path to the model file
+model_path = os.path.join(os.getcwd(), 'models/Oral.h5')
+model = tf.keras.models.load_model(model_path)
+
 
 class_labels = ['Normal', 'Positive Oral Cancer']
 
