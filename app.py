@@ -14,7 +14,7 @@ import joblib
 import os
 
 # Get absolute path to the model file
-model_path = os.path.join(os.getcwd(), 'models/Oral.h5')
+model_path = os.path.join(os.getcwd(), 'https://github.com/eldon6219/TumorSwift-oral-cancer/blob/bc75c8e86ba51823987bb9cdb123725e3601a4f4/models/Oral.h5')
 model = tf.keras.models.load_model(model_path)
 
 
