@@ -1,0 +1,6 @@
+version: 2.0
+services:
+  web:
+    env:
+      RAILWAY_RUNTIME: python
+      RAILWAY_START_CMD: gunicorn -b 0.0.0.0:$RAILWAY_PORT app:app
