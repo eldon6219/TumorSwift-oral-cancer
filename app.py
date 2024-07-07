@@ -12,10 +12,14 @@ import joblib
 
 
 import os
+import tensorflow as tf
 
-# Get absolute path to the model file
-model_path = os.path.join(os.getcwd(), 'https://github.com/eldon6219/TumorSwift-oral-cancer/blob/bc75c8e86ba51823987bb9cdb123725e3601a4f4/models/Oral.h5')
+# Construct the local file path to Oral.h5
+model_path = os.path.join(os.getcwd(), 'models', 'Oral.h5')
+
+# Load the model using the correct local file path
 model = tf.keras.models.load_model(model_path)
+
 
 
 class_labels = ['Normal', 'Positive Oral Cancer']
