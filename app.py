@@ -4,22 +4,15 @@ from keras.preprocessing import image
 from keras.applications.efficientnet import preprocess_input
 from keras.preprocessing.image import load_img
 from keras.preprocessing.image import img_to_array
-# from keras.applications.vgg16 import preprocess_input
-# from keras.applications.vgg16 import decode_predictions
-# from keras.applications.vgg16 import VGG16
 import tensorflow as tf
 import requests
 import joblib
 
 
-url = "https://github.com/eldon6219/TumorSwift-oral-cancer/blob/main/Oral.pkl?raw=true"
-response = requests.get(url, stream=True)
 
-with open("Oral.pkl", "wb") as f:
-    for chunk in response.iter_content(1024):
-        f.write(chunk)
 
-model = joblib.load("Oral.pkl")
+model = tf.keras.models.load_model("models/Oral.h5")
+
 class_labels = ['Normal', 'Positive Oral Cancer']
 
 
